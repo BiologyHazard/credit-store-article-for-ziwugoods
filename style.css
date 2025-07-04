@@ -1,0 +1,251 @@
+/* 使用 Noto Sans SC 和 JetBrains Mono 字体 */
+@import url('https://fonts.googleapis.net/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.net/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --sans-font: "Noto Sans SC", sans-serif;
+    --mono-font: "Jetbrains Mono", monospace;
+    --text: black;
+    --bg: white;
+    --text-light: #585858;
+    --border: #b8b8b8;
+    --code: #0a3069;
+    --code-bg: #f0f2f4;
+    --paragraph-margin: 0.6em;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--sans-font);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: calc(0.8em + 0.8rem);
+    margin-bottom: calc(0.2em + 0.8rem);
+    break-after: avoid;
+}
+
+h1,
+h2 {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.65em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.15em;
+}
+
+p {
+    margin-block-start: var(--paragraph-margin);
+    margin-block-end: var(--paragraph-margin);
+}
+
+a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3d9ceb;
+}
+
+blockquote {
+    border-left: 0.3em solid var(--border);
+    color: var(--text-light);
+    margin-block: 2em;
+    margin-inline: 0;
+    padding: 0 0.8em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 1px rgb(0 0 0 / 25%);
+    margin: 1rem auto;
+}
+
+pre {
+    display: block;
+    padding: 0.8em;
+    background-color: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+code {
+    font-family: var(--mono-font);
+    color: var(--code);
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+ul,
+ol {
+    margin-block-start: var(--paragraph-margin);
+    margin-block-end: var(--paragraph-margin);
+}
+
+ul {
+    padding-inline-start: 1.5em;
+}
+
+ol {
+    padding-inline-start: 2em;
+}
+
+li {
+    margin-block-start: var(--paragraph-margin);
+    margin-block-end: var(--paragraph-margin);
+}
+
+ul>li {
+    padding-inline-start: 0.5em;
+}
+
+ul>li::marker,
+ol>li::marker {
+    font-family: var(--mono-font);
+    color: var(--code);
+}
+
+td {
+    padding: 0.5em;
+    border: 1px solid var(--border);
+}
+
+td p {
+    margin: 0;
+}
+
+@media print {
+    @page {
+        margin: 1in;
+    }
+
+    h1 {
+        break-before: page;
+    }
+
+    html {
+        font-size: 10.5pt;
+    }
+
+    body {
+        max-width: unset;
+        padding: 0;
+    }
+
+    img {
+        box-shadow: none;
+    }
+}
+
+/* 自动编号 */
+body {
+    counter-reset: h1;
+}
+
+h1 {
+    counter-reset: h2;
+}
+
+h2 {
+    counter-reset: h3;
+}
+
+h3 {
+    counter-reset: h4;
+}
+
+h4 {
+    counter-reset: h5;
+}
+
+h5 {
+    counter-reset: h6;
+}
+
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    color: #1456f0;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+h1::before {
+    counter-increment: h1;
+    content: counter(h1);
+}
+
+h2::before {
+    counter-increment: h2;
+    content: counter(h1) "." counter(h2);
+}
+
+h3::before {
+    counter-increment: h3;
+    content: counter(h1) "." counter(h2) "." counter(h3);
+}
+
+h4::before {
+    counter-increment: h4;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4);
+}
+
+h5::before {
+    counter-increment: h5;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+}
+
+h6::before {
+    counter-increment: h6;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+}
