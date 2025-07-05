@@ -7,6 +7,7 @@
     --sans-font: "Noto Sans SC", sans-serif;
     --serif-font: "Noto Serif SC", serif;
     --mono-font: "Jetbrains Mono", monospace;
+    --main-font: var(--serif-font);
     --text: black;
     --bg: white;
     --text-light: #6a6a6a;
@@ -16,15 +17,13 @@
     --paragraph-margin: 0.6em;
 }
 
-*,
-*::before,
-*::after {
+* {
     box-sizing: border-box;
 }
 
 html {
-    font-family: var(--serif-font);
-    font-size: 18px;
+    font-family: var(--main-font);
+    font-size: 14px;
     line-height: 1.6;
     overflow-wrap: break-word;
 }
@@ -35,10 +34,17 @@ html {
     vertical-align: 0.02em;
 }
 
+b :lang(en),
+strong :lang(en) {
+    font-family: "CMU Serif";
+    font-size: 1.1em;
+    vertical-align: 0.02em;
+}
+
 body {
     color: var(--text);
     background-color: var(--bg);
-    width: min(100% - 2em, 1200px);
+    width: min(100% - 2em, calc(176mm - 2 * 15mm));
     margin: auto;
 }
 
@@ -56,7 +62,7 @@ h6 {
 h1,
 h2 {
     padding-block-end: 0.5em;
-    border-block-end: 1px solid var(--border);
+    border-block-end: 0.05rem solid var(--border);
 }
 
 h1 {
@@ -113,7 +119,7 @@ blockquote {
 
 hr {
     border: none;
-    border-block-start: 1px solid var(--border);
+    border-block-start: 0.05rem solid var(--border);
     margin-block: calc(3 * var(--paragraph-margin));
 }
 
@@ -126,8 +132,8 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 8px 1px rgb(0 0 0 / 25%);
+    border-radius: 0.45rem;
+    box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
     margin: auto;
 }
 
@@ -140,8 +146,8 @@ pre {
     display: block;
     padding: 0.8em;
     background-color: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 5px;
+    border: 0.05rem solid var(--border);
+    border-radius: 0.28rem;
 }
 
 code {
@@ -179,214 +185,28 @@ ol>li::marker {
 }
 
 table {
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse;
-    margin-block: var(--paragraph-margin);
+    margin-inline: auto;
+    margin-block: calc(2 * var(--paragraph-margin));
 }
 
-td {
-    padding: 0.5em;
-    border: 1px solid var(--border);
+table td {
+    padding-inline: 0.5em;
+    padding-block: 0.3em;
+    border: 0.05rem solid var(--border);
 }
 
-td p {
-    margin: 0;
-}
-
-.katex {
+.equation {
     /* font-family: "KaTeX_Main", "Noto Sans SC", sans-serif; */
     font-size: 1em;
     vertical-align: 0.05em;
     margin: 0 0.2em;
 }
 
-/* 打印样式 */
-@media print {
-    @page {
-        margin: 0in;
-        size: B5;
-    }
-
-    h1 {
-        margin-block-start: 0;
-        break-before: page;
-    }
-
-    html {
-        font-size: 10.5pt;
-    }
-
-    body {
-        max-width: unset;
-        padding: 0;
-    }
-
-    img {
-        /* box-shadow: none; */
-    }
-}
-
-/* 自动编号 */
-body {
-    counter-reset: h1;
-}
-
-h1 {
-    counter-reset: h2;
-}
-
-h2 {
-    counter-reset: h3;
-}
-
-h3 {
-    counter-reset: h4;
-}
-
-h4 {
-    counter-reset: h5;
-}
-
-h5 {
-    counter-reset: h6;
-}
-
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-    color: #1456f0;
-    font-family: "CMU Serif";
-    font-size: 1.2em;
-    vertical-align: 0em;
-    /* font-weight: bold; */
-    margin-right: 1em;
-}
-
-h1::before {
-    counter-increment: h1;
-    content: counter(h1);
-}
-
-h2::before {
-    counter-increment: h2;
-    content: counter(h1) "." counter(h2);
-}
-
-h3::before {
-    counter-increment: h3;
-    content: counter(h1) "." counter(h2) "." counter(h3);
-}
-
-h4::before {
-    counter-increment: h4;
-    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4);
-}
-
-h5::before {
-    counter-increment: h5;
-    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
-}
-
-h6::before {
-    counter-increment: h6;
-    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
-}
-
-/* 颜色 */
-.text-color-1 {
-    color: #d83931;
-}
-
-.text-color-2 {
-    color: #de7802;
-}
-
-.text-color-3 {
-    color: #dc9b04;
-}
-
-.text-color-4 {
-    color: #2ea121;
-}
-
-.text-color-5 {
-    color: #245bdb;
-}
-
-.text-color-6 {
-    color: #6425d0;
-}
-
-.text-color-7 {
-    color: #646a73;
-}
-
-.bg-color-1 {
-    background-color: #fbbfbc;
-}
-
-.bg-color-2 {
-    background-color: #feddb6;
-}
-
-.bg-color-3 {
-    background-color: #fff895;
-}
-
-.bg-color-4 {
-    background-color: #c5f1c1;
-}
-
-.bg-color-5 {
-    background-color: #cfddfe;
-}
-
-.bg-color-6 {
-    background-color: #dcc9fb;
-}
-
-.bg-color-7 {
-    background-color: #e5e6e9;
-}
-
-.bg-color-8 {
-    background-color: #f76964;
-}
-
-.bg-color-9 {
-    background-color: #ffa53d;
-}
-
-.bg-color-10 {
-    background-color: #ffe928;
-}
-
-.bg-color-11 {
-    background-color: #62d256;
-}
-
-.bg-color-12 {
-    background-color: #9ebbfe;
-}
-
-.bg-color-13 {
-    background-color: #c4a4fa;
-}
-
-.bg-color-14 {
-    background-color: #bbbfc4;
-}
-
-.bg-color-15 {
-    background-color: #f2f3f5;
-}
-
 .grid-container {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -398,4 +218,61 @@ h6::before {
 .doc-logo {
     margin-inline: 0.2em;
     vertical-align: -0.14em;
+}
+
+.callout {
+    display: block;
+    padding-inline: 1em;
+    padding-block: 0.8em;
+    background-color: var(--code-bg);
+    border: 0.05rem solid var(--border);
+    border-radius: 0.28rem;
+    margin-block: calc(2 * var(--paragraph-margin));
+}
+
+.callout>:first-child,
+.grid-column>:first-child,
+blockquote>:first-child,
+td>:first-child {
+    margin-block-start: 0;
+}
+
+.callout>:last-child,
+.grid-column>:last-child,
+blockquote>:last-child,
+td>:last-child {
+    margin-block-end: 0;
+}
+
+/* 打印样式 */
+@media print {
+    @page {
+        margin: 15mm;
+        size: B5;
+
+        @bottom-center {
+            content: counter(page) " / " counter(pages);
+            font-family: "CMU Serif";
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        max-width: unset;
+    }
+
+    h1 {
+        margin-block-start: 0;
+        break-before: page;
+    }
+
+    figure {
+        padding-block-start: 0.45rem;
+        margin-block-start: calc(1em - 0.45rem);
+    }
 }
