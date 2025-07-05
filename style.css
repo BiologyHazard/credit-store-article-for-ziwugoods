@@ -1,13 +1,15 @@
-/* 使用 Noto Sans SC 和 JetBrains Mono 字体 */
+/* 使用 Noto Sans SC、Noto Serif SC 和 JetBrains Mono 字体 */
 @import url('https://fonts.googleapis.net/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.net/css2?family=Noto+Serif+SC:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.net/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
     --sans-font: "Noto Sans SC", sans-serif;
+    --serif-font: "Noto Serif SC", serif;
     --mono-font: "Jetbrains Mono", monospace;
     --text: black;
     --bg: white;
-    --text-light: #585858;
+    --text-light: #6a6a6a;
     --border: #b8b8b8;
     --code: #0a3069;
     --code-bg: #f0f2f4;
@@ -21,18 +23,23 @@
 }
 
 html {
-    font-family: var(--sans-font);
+    font-family: var(--serif-font);
     font-size: 18px;
     line-height: 1.6;
     overflow-wrap: break-word;
 }
 
+:lang(en) {
+    font-family: "CMU Serif";
+    font-size: 1.05em;
+    vertical-align: 0.02em;
+}
+
 body {
     color: var(--text);
     background-color: var(--bg);
-    max-width: 1200px;
+    width: min(100% - 2em, 1200px);
     margin: auto;
-    padding: 0 18px;
 }
 
 h1,
@@ -41,15 +48,15 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: calc(0.8em + 0.8rem);
-    margin-bottom: calc(0.2em + 0.8rem);
+    margin-block-start: calc(0.8em + 0.8rem);
+    margin-block-end: calc(0.2em + 0.8rem);
     break-after: avoid;
 }
 
 h1,
 h2 {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.5em;
+    padding-block-end: 0.5em;
+    border-block-end: 1px solid var(--border);
 }
 
 h1 {
@@ -77,8 +84,12 @@ h6 {
 }
 
 p {
-    margin-block-start: var(--paragraph-margin);
-    margin-block-end: var(--paragraph-margin);
+    margin-block: var(--paragraph-margin);
+}
+
+u {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 a {
@@ -87,16 +98,28 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
     color: #3d9ceb;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 blockquote {
-    border-left: 0.3em solid var(--border);
     color: var(--text-light);
-    margin-block: 2em;
+    padding-inline-start: 1em;
+    border-inline-start: 0.3em solid var(--border);
     margin-inline: 0;
-    padding: 0 0.8em;
+    margin-block: var(--paragraph-margin);
+}
+
+hr {
+    border: none;
+    border-block-start: 1px solid var(--border);
+    margin-block: calc(3 * var(--paragraph-margin));
+}
+
+figure {
+    margin-inline: 0;
+    text-align: center;
 }
 
 img {
@@ -105,7 +128,12 @@ img {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 8px 1px rgb(0 0 0 / 25%);
-    margin: 1rem auto;
+    margin: auto;
+}
+
+figcaption {
+    color: var(--text-light);
+    margin-block-start: 0.5em;
 }
 
 pre {
@@ -125,8 +153,7 @@ code {
 
 ul,
 ol {
-    margin-block-start: var(--paragraph-margin);
-    margin-block-end: var(--paragraph-margin);
+    margin-block: var(--paragraph-margin);
 }
 
 ul {
@@ -138,8 +165,7 @@ ol {
 }
 
 li {
-    margin-block-start: var(--paragraph-margin);
-    margin-block-end: var(--paragraph-margin);
+    margin-block: var(--paragraph-margin);
 }
 
 ul>li {
@@ -149,7 +175,13 @@ ul>li {
 ul>li::marker,
 ol>li::marker {
     font-family: var(--mono-font);
-    color: var(--code);
+    color: #1456f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--paragraph-margin);
 }
 
 td {
@@ -161,12 +193,22 @@ td p {
     margin: 0;
 }
 
+.katex {
+    /* font-family: "KaTeX_Main", "Noto Sans SC", sans-serif; */
+    font-size: 1em;
+    vertical-align: 0.05em;
+    margin: 0 0.2em;
+}
+
+/* 打印样式 */
 @media print {
     @page {
-        margin: 1in;
+        margin: 0in;
+        size: B5;
     }
 
     h1 {
+        margin-block-start: 0;
         break-before: page;
     }
 
@@ -180,7 +222,7 @@ td p {
     }
 
     img {
-        box-shadow: none;
+        /* box-shadow: none; */
     }
 }
 
@@ -216,7 +258,10 @@ h4::before,
 h5::before,
 h6::before {
     color: #1456f0;
-    font-weight: bold;
+    font-family: "CMU Serif";
+    font-size: 1.2em;
+    vertical-align: 0em;
+    /* font-weight: bold; */
     margin-right: 1em;
 }
 
@@ -248,4 +293,109 @@ h5::before {
 h6::before {
     counter-increment: h6;
     content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+}
+
+/* 颜色 */
+.text-color-1 {
+    color: #d83931;
+}
+
+.text-color-2 {
+    color: #de7802;
+}
+
+.text-color-3 {
+    color: #dc9b04;
+}
+
+.text-color-4 {
+    color: #2ea121;
+}
+
+.text-color-5 {
+    color: #245bdb;
+}
+
+.text-color-6 {
+    color: #6425d0;
+}
+
+.text-color-7 {
+    color: #646a73;
+}
+
+.bg-color-1 {
+    background-color: #fbbfbc;
+}
+
+.bg-color-2 {
+    background-color: #feddb6;
+}
+
+.bg-color-3 {
+    background-color: #fff895;
+}
+
+.bg-color-4 {
+    background-color: #c5f1c1;
+}
+
+.bg-color-5 {
+    background-color: #cfddfe;
+}
+
+.bg-color-6 {
+    background-color: #dcc9fb;
+}
+
+.bg-color-7 {
+    background-color: #e5e6e9;
+}
+
+.bg-color-8 {
+    background-color: #f76964;
+}
+
+.bg-color-9 {
+    background-color: #ffa53d;
+}
+
+.bg-color-10 {
+    background-color: #ffe928;
+}
+
+.bg-color-11 {
+    background-color: #62d256;
+}
+
+.bg-color-12 {
+    background-color: #9ebbfe;
+}
+
+.bg-color-13 {
+    background-color: #c4a4fa;
+}
+
+.bg-color-14 {
+    background-color: #bbbfc4;
+}
+
+.bg-color-15 {
+    background-color: #f2f3f5;
+}
+
+.grid-container {
+    display: flex;
+    gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        flex-direction: column;
+    }
+}
+
+.doc-logo {
+    margin-inline: 0.2em;
+    vertical-align: -0.14em;
 }
