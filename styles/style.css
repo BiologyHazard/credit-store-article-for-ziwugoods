@@ -1,0 +1,290 @@
+:root {
+    --sans-font: "Noto Sans SC", sans-serif;
+    --serif-font: "Noto Serif SC", serif;
+    --mono-font: "Jetbrains Mono", monospace;
+    --main-font: var(--serif-font);
+    --text: black;
+    --bg: white;
+    --text-light: #6a6a6a;
+    --border: #b8b8b8;
+    --code: #0a3069;
+    --code-bg: #f0f2f4;
+    --paragraph-margin: 0.6em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+:is(p, li, h1, h2, h3, h4, h5, h6, figcaption) :lang(en) {
+    font-family: "CMU Serif";
+    font-size-adjust: 0.46;
+    line-height: calc(1.6 / 1.1);
+    /* vertical-align: 0.02em; */
+}
+
+/* :is(p, li, h1, h2, h3, h4, h5, h6) :is(b, strong) :lang(en) {
+    font-size-adjust: 1.15;
+    vertical-align: 0.02em;
+} */
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+    width: min(100% - 2em, calc(182mm - 2 * 15mm));
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block-start: calc(0.8em + 0.8rem);
+    margin-block-end: calc(0.2em + 0.8rem);
+    break-after: avoid;
+}
+
+h1,
+h2 {
+    padding-block-end: 0.5em;
+    border-block-end: 0.05rem solid var(--border);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.65em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1.15em;
+}
+
+p {
+    margin-block: var(--paragraph-margin);
+}
+
+u {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3d9ceb;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+blockquote {
+    color: var(--text-light);
+    padding-inline-start: 1em;
+    border-inline-start: 0.2rem solid var(--border);
+    margin-inline: 0;
+    margin-block: var(--paragraph-margin);
+}
+
+hr {
+    border: none;
+    border-block-start: 0.05rem solid var(--border);
+    margin-block: calc(3 * var(--paragraph-margin));
+}
+
+figure {
+    margin-inline: 0;
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.45rem;
+    box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
+    margin: auto;
+}
+
+figcaption {
+    color: var(--text-light);
+    margin-block-start: 0.5em;
+}
+
+pre {
+    font-size: 0.7em;
+    letter-spacing: -0.02em;
+    display: block;
+    padding: 0.8em;
+    background-color: var(--code-bg);
+    border: 0.05rem solid var(--border);
+    border-radius: 0.28rem;
+    margin-block: 1.2rem;
+}
+
+code {
+    font-family: var(--mono-font);
+    color: var(--code);
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+ul,
+ol {
+    margin-block: var(--paragraph-margin);
+}
+
+ul {
+    padding-inline-start: 1.5em;
+}
+
+ol {
+    padding-inline-start: 2em;
+}
+
+li {
+    margin-block: var(--paragraph-margin);
+}
+
+ul>li {
+    padding-inline-start: 0.5em;
+}
+
+ul>li::marker,
+ol>li::marker {
+    font-family: var(--mono-font);
+    color: #1456f0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0.1rem solid var(--text);
+    margin-inline: auto;
+    margin-block: calc(2 * var(--paragraph-margin));
+}
+
+table thead {
+    background-color: var(--code-bg);
+    border: 0.1rem solid var(--text);
+}
+
+table td {
+    padding-inline: 0.5em;
+    padding-block: 0.3em;
+    border: 0.05rem solid var(--border);
+}
+
+.katex {
+    /* font-family: "KaTeX_Main", "Noto Sans SC", sans-serif; */
+    font-size: 1em;
+    vertical-align: 0.05em;
+    margin: 0 0.2em;
+}
+
+.grid-container {
+    display: flex;
+    gap: 1rem;
+    margin-block: var(--paragraph-margin)
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        flex-direction: column;
+    }
+}
+
+.doc-logo {
+    margin-inline: 0.2em;
+    vertical-align: -0.14em;
+}
+
+.callout-outer {
+    display: flex;
+    gap: 0.7em;
+    padding-inline: 1em;
+    padding-block: 0.8em;
+    background-color: #fff5eb;
+    border: 0.05rem solid #fed4a4;
+    border-radius: 0.7rem;
+    margin-block: calc(2 * var(--paragraph-margin));
+}
+
+.callout-icon {
+    font-size: 1.1em;
+    margin-top: -0.2em;
+    color: #ffaa00;
+}
+
+.callout-inner>:first-child,
+.grid-column>:first-child,
+blockquote>:first-child,
+td>:first-child {
+    margin-block-start: 0;
+}
+
+.callout-inner>:last-child,
+.grid-column>:last-child,
+blockquote>:last-child,
+td>:last-child {
+    margin-block-end: 0;
+}
+
+/* 打印样式 */
+@media print {
+    @page {
+        margin: 15mm 0;
+        size: 176mm 250mm;
+
+        @bottom-center {
+            /* content: counter(page) " / " counter(pages); */
+            content: counter(page);
+            font-family: "CMU Serif";
+            font-size: 0.9em;
+            color: var(--text-light);
+            vertical-align: 3em;
+        }
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        width: calc(100% - 2 * 18mm);
+    }
+
+    h1 {
+        margin-block-start: 0;
+        break-before: page;
+    }
+
+    figure {
+        padding-block-start: 0.45rem;
+        margin-block-start: calc(1em - 0.45rem);
+    }
+}

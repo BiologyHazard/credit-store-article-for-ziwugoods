@@ -1,0 +1,66 @@
+body {
+    counter-reset: h1;
+}
+
+h1.auto-numbering {
+    counter-reset: h2;
+}
+
+h2.auto-numbering {
+    counter-reset: h3;
+}
+
+h3.auto-numbering {
+    counter-reset: h4;
+}
+
+h4.auto-numbering {
+    counter-reset: h5;
+}
+
+h5.auto-numbering {
+    counter-reset: h6;
+}
+
+h1.auto-numbering::before,
+h2.auto-numbering::before,
+h3.auto-numbering::before,
+h4.auto-numbering::before,
+h5.auto-numbering::before,
+h6.auto-numbering::before {
+    color: #1456f0;
+    font-family: "CMU Serif";
+    font-size: 1.2em;
+    vertical-align: -0.02em;
+    margin-right: 1em;
+}
+
+h1.auto-numbering::before {
+    counter-increment: h1;
+    content: counter(h1);
+}
+
+h2.auto-numbering::before {
+    counter-increment: h2;
+    content: counter(h1) "." counter(h2);
+}
+
+h3.auto-numbering::before {
+    counter-increment: h3;
+    content: counter(h1) "." counter(h2) "." counter(h3);
+}
+
+h4.auto-numbering::before {
+    counter-increment: h4;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4);
+}
+
+h5.auto-numbering::before {
+    counter-increment: h5;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+}
+
+h6.auto-numbering::before {
+    counter-increment: h6;
+    content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+}
