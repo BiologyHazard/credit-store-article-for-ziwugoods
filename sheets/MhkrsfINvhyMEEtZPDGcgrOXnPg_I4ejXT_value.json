@@ -1,0 +1,131 @@
+{
+    "revision": 525,
+    "spreadsheetToken": "MhkrsfINvhyMEEtZPDGcgrOXnPg",
+    "valueRange": {
+        "majorDimension": "ROWS",
+        "range": "I4ejXT!A1:J10",
+        "revision": 525,
+        "values": [
+            [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "现有信用",
+                "75 / 300"
+            ],
+            [
+                "栏位 0",
+                null,
+                "栏位 1",
+                null,
+                "栏位 2",
+                null,
+                "栏位 3",
+                null,
+                "栏位 4",
+                null
+            ],
+            [
+                "破损装置×2",
+                "-75%",
+                "赤金×6",
+                "-75%",
+                "糖×2",
+                "-50%",
+                "源岩×2",
+                "-50%",
+                "酮凝集×2",
+                "-50%"
+            ],
+            [
+                "售罄",
+                null,
+                "售罄",
+                null,
+                "售罄",
+                null,
+                "售罄",
+                null,
+                "售罄",
+                null
+            ],
+            [
+                "原价 160 信用",
+                "现价 40 信用",
+                "原价 160 信用",
+                "现价 40 信用",
+                "原价 200 信用",
+                "现价 100 信用",
+                "原价 80 信用",
+                "现价 40 信用",
+                "原价 240 信用",
+                "现价 120 信用"
+            ],
+            [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ],
+            [
+                "栏位 5",
+                null,
+                "栏位 6",
+                null,
+                "栏位 7",
+                null,
+                "栏位 8",
+                null,
+                "栏位 9",
+                null
+            ],
+            [
+                "糖×2",
+                "无折扣",
+                "龙门币×3600",
+                "无折扣",
+                "初级作战记录×9",
+                "无折扣",
+                "初级作战记录×9",
+                "无折扣",
+                "招聘许可×1",
+                "无折扣"
+            ],
+            [
+                null,
+                null,
+                "售罄",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "售罄",
+                null
+            ],
+            [
+                "现价 200 信用",
+                null,
+                "现价 200 信用",
+                null,
+                "现价 200 信用",
+                null,
+                "现价 200 信用",
+                null,
+                "现价 160 信用",
+                null
+            ]
+        ]
+    }
+}

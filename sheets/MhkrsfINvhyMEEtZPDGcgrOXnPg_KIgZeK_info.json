@@ -1,0 +1,29 @@
+{
+    "sheet": {
+        "sheet_id": "KIgZeK",
+        "title": "KIgZeK",
+        "index": 3,
+        "hidden": false,
+        "grid_properties": {
+            "frozen_row_count": 0,
+            "frozen_column_count": 0,
+            "row_count": 13,
+            "column_count": 3
+        },
+        "resource_type": "sheet",
+        "merges": [
+            {
+                "start_row_index": 0,
+                "end_row_index": 0,
+                "start_column_index": 0,
+                "end_column_index": 1
+            },
+            {
+                "start_row_index": 0,
+                "end_row_index": 1,
+                "start_column_index": 2,
+                "end_column_index": 2
+            }
+        ]
+    }
+}

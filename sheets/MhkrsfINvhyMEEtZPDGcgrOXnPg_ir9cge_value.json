@@ -1,0 +1,429 @@
+{
+    "revision": 525,
+    "spreadsheetToken": "MhkrsfINvhyMEEtZPDGcgrOXnPg",
+    "valueRange": {
+        "majorDimension": "ROWS",
+        "range": "ir9cge!A1:G27",
+        "revision": 525,
+        "values": [
+            [
+                "不同折扣下\n商品的性价比",
+                null,
+                "折扣",
+                null,
+                null,
+                null,
+                null
+            ],
+            [
+                null,
+                null,
+                "无折扣",
+                "-50%",
+                "-75%",
+                "-95%",
+                "-99%"
+            ],
+            [
+                {
+                    "fileToken": "HtrCbB0rDompKuxJs47c6apKnRe",
+                    "height": 139,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/HtrCbB0rDompKuxJs47c6apKnRe/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "龙门币×1800",
+                "0.0648",
+                "0.1296",
+                "0.2592",
+                "1.2960",
+                null
+            ],
+            [
+                {
+                    "fileToken": "BFpnbgtoRoshORxWtJoc8XlOn4b",
+                    "height": 139,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/BFpnbgtoRoshORxWtJoc8XlOn4b/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "龙门币×3600",
+                "0.0648",
+                "0.1296",
+                "0.2592",
+                null,
+                "6.4800"
+            ],
+            [
+                {
+                    "fileToken": "MzJDbNvS1oTkUOxhRFccazAln3e",
+                    "height": 124,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/MzJDbNvS1oTkUOxhRFccazAln3e/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 147
+                },
+                "家具零件×20",
+                "0.0000",
+                "0.0000",
+                "0.0001",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "MzJDbNvS1oTkUOxhRFccazAln3e",
+                    "height": 124,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/MzJDbNvS1oTkUOxhRFccazAln3e/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 147
+                },
+                "家具零件×25",
+                "0.0000",
+                "0.0000",
+                "0.0001",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "Z1fubiuDZotyMRx7E6ZckCqznwg",
+                    "height": 180,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/Z1fubiuDZotyMRx7E6ZckCqznwg/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 169
+                },
+                "招聘许可×1",
+                "0.1504",
+                "0.3009",
+                "0.6017",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "Rbslbe7K4o9ehexCHkwcbwmfnPe",
+                    "height": 175,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/Rbslbe7K4o9ehexCHkwcbwmfnPe/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 153
+                },
+                "加急许可×1",
+                "0.0001",
+                "0.0001",
+                "0.0003",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "MWNTbi4HfogVK0xoPTKcMxWDn3c",
+                    "height": 120,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/MWNTbi4HfogVK0xoPTKcMxWDn3c/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 177
+                },
+                "赤金×6",
+                "0.0333",
+                "0.0666",
+                "0.1332",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "E0ulbnPzco54euxj21kcES31nuh",
+                    "height": 142,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/E0ulbnPzco54euxj21kcES31nuh/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "基础作战记录×9",
+                "0.0405",
+                "0.0810",
+                "0.1620",
+                "0.8100",
+                null
+            ],
+            [
+                {
+                    "fileToken": "KgEAby2IOoEymDxoPQ2cZ2Tyn7g",
+                    "height": 142,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/KgEAby2IOoEymDxoPQ2cZ2Tyn7g/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "初级作战记录×9",
+                "0.0405",
+                "0.0810",
+                "0.1620",
+                null,
+                "4.0500"
+            ],
+            [
+                {
+                    "fileToken": "QdPDbw0ryoIi6Ox69oKc9jPPnSh",
+                    "height": 180,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/QdPDbw0ryoIi6Ox69oKc9jPPnSh/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 170
+                },
+                "技巧概要·卷1×5",
+                "0.0512",
+                "0.1023",
+                "0.2047",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "Nf1pbBKcKootkhxSn69cvzHunGc",
+                    "height": 180,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/Nf1pbBKcKootkhxSn69cvzHunGc/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 170
+                },
+                "技巧概要·卷2×3",
+                "0.0624",
+                "0.1249",
+                "0.2498",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "B6EFbUk9moDjGFxDcdUckwfmnwe",
+                    "height": 86,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/B6EFbUk9moDjGFxDcdUckwfmnwe/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "碳×5",
+                "0.0273",
+                "0.0545",
+                "0.1090",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "GuKlbNghCoFjUKxcmYncAZBNn9c",
+                    "height": 117,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/GuKlbNghCoFjUKxcmYncAZBNn9c/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 180
+                },
+                "碳素×3",
+                "0.0205",
+                "0.0410",
+                "0.0821",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "YMdTb6eiGoK8BcxGsjscRoBanih",
+                    "height": 99,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/YMdTb6eiGoK8BcxGsjscRoBanih/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 119
+                },
+                "源岩×2",
+                "0.0298",
+                "0.0596",
+                "0.1192",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "P6yCbI43lodfv9x2EvlcKPlwned",
+                    "height": 98,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/P6yCbI43lodfv9x2EvlcKPlwned/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 159
+                },
+                "代糖×2",
+                "0.0341",
+                "0.0682",
+                "0.1363",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "JIRSbvNPfobFeSxX7EscZzQLnyf",
+                    "height": 162,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/JIRSbvNPfobFeSxX7EscZzQLnyf/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 94
+                },
+                "酯原料×2",
+                "0.0379",
+                "0.0757",
+                "0.1515",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "ExBebnIGlosC8axgwSUcrbgYnJb",
+                    "height": 124,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/ExBebnIGlosC8axgwSUcrbgYnJb/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 82
+                },
+                "异铁碎片×2",
+                "0.0387",
+                "0.0774",
+                "0.1548",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "LC2wb2scbop5TXxtff0czFzCnqb",
+                    "height": 149,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/LC2wb2scbop5TXxtff0czFzCnqb/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 103
+                },
+                "双酮×2",
+                "0.0396",
+                "0.0793",
+                "0.1586",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "Ianhbn6raocph1x9qaccvdy2nMb",
+                    "height": 140,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/Ianhbn6raocph1x9qaccvdy2nMb/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 118
+                },
+                "破损装置×2",
+                "0.0384",
+                "0.0768",
+                "0.1537",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "SZD2b3CytoA1okxI5J5ctIVXnkf",
+                    "height": 131,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/SZD2b3CytoA1okxI5J5ctIVXnkf/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 135
+                },
+                "固源岩×3",
+                "0.0533",
+                "0.1065",
+                "0.2131",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "ObUubWofHoQRX8xCH0JcoOWxnYf",
+                    "height": 130,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/ObUubWofHoQRX8xCH0JcoOWxnYf/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 162
+                },
+                "糖×2",
+                "0.0509",
+                "0.1017",
+                "0.2035",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "JwFvbha3DoDs2AxNTCGcbxyKnig",
+                    "height": 150,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/JwFvbha3DoDs2AxNTCGcbxyKnig/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 144
+                },
+                "聚酸酯×2",
+                "0.0566",
+                "0.1131",
+                "0.2262",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "SqeIbeqrmoomMOxymDScfySCnxv",
+                    "height": 153,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/SqeIbeqrmoomMOxymDScfySCnxv/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 124
+                },
+                "异铁×2",
+                "0.0578",
+                "0.1157",
+                "0.2313",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "UkGWbjd4go2czkxbyxFcwzegnrh",
+                    "height": 155,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/UkGWbjd4go2czkxbyxFcwzegnrh/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 113
+                },
+                "酮凝集×2",
+                "0.0593",
+                "0.1185",
+                "0.2370",
+                null,
+                null
+            ],
+            [
+                {
+                    "fileToken": "IFgFbwtnnodmeHx5lq6c9ZJxnbe",
+                    "height": 169,
+                    "link": "https://h089spg07ll.feishu.cn/space/api/box/stream/download/v2/cover/IFgFbwtnnodmeHx5lq6c9ZJxnbe/?height=1280&mount_node_token=Te9wshwEphqd7DtX93FcPRaNnud&mount_point=sheet_image&policy=equal&width=1280",
+                    "text": "",
+                    "type": "embed-image",
+                    "width": 142
+                },
+                "装置×1",
+                "0.0575",
+                "0.1150",
+                "0.2299",
+                null,
+                null
+            ]
+        ]
+    }
+}

@@ -6,28 +6,28 @@
 /* 从本地引入 CMU Serif 字体 */
 @font-face {
     font-family: 'CMU Serif';
-    src: url('/fonts/cmunrm.otf') format('opentype');
+    src: url('../fonts/cmunrm.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'CMU Serif';
-    src: url('/fonts/cmunbx.otf') format('opentype');
+    src: url('../fonts/cmunbx.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'CMU Serif';
-    src: url('/fonts/cmunti.otf') format('opentype');
+    src: url('../fonts/cmunti.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'CMU Serif';
-    src: url('/fonts/cmunbi.otf') format('opentype');
+    src: url('../fonts/cmunbi.otf') format('opentype');
     font-weight: bold;
     font-style: italic;
 }
