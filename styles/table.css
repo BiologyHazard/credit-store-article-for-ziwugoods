@@ -1,0 +1,123 @@
+@import "colors.css";
+
+table {
+    margin-inline: auto;
+    margin-block: calc(2 * var(--paragraph-margin));
+}
+
+/* table {
+    font-size: 0.7em;
+    border-collapse: collapse;
+    border: 0.1rem solid var(--text);
+    margin-inline: auto;
+    margin-block: calc(2 * var(--paragraph-margin));
+}
+
+table thead {
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--code-bg);
+    border: 0.1rem solid var(--text);
+}
+
+table :is(td, th) {
+    padding-inline: 0.5em;
+    padding-block: 0.3em;
+    border: 0.05rem solid var(--border);
+} */
+
+table[spreadsheet-token_sheet-id="MhkrsfINvhyMEEtZPDGcgrOXnPg_I4ejXT"] {
+    table-layout: fixed;
+    width: 100%;
+
+    border: none;
+    border-collapse: collapse;
+    text-align: center;
+
+    caption {
+        color: var(--text-light);
+        margin-block-start: 0.5em;
+        caption-side: bottom;
+    }
+
+    tr {
+        height: 1em;
+        padding-block: 0;
+        border: none;
+    }
+
+    td {
+        font-size: 0.52em;
+        padding: 0;
+    }
+
+    /* 设置列宽 */
+    td.td-col-1,
+    td.td-col-3,
+    td.td-col-5,
+    td.td-col-7,
+    td.td-col-9 {
+        width: 11%;
+    }
+
+    td.td-col-2,
+    td.td-col-4,
+    td.td-col-6,
+    td.td-col-8,
+    td.td-col-10 {
+        width: 9%;
+    }
+
+    /* 设置框线 */
+    td.td-row-2,
+    td.td-row-3,
+    td.td-row-4,
+    td.td-row-5,
+    td.td-row-7,
+    td.td-row-8,
+    td.td-row-9,
+    td.td-row-10 {
+        border: 0.02rem solid var(--border);
+    }
+
+    /* 文字格式 */
+    /* 栏位编号加粗 */
+    td.td-row-2,
+    td.td-row-7 {
+        font-weight: bold;
+    }
+
+    /* 其他栏位文字颜色 */
+    :is(td.td-row-2, td.td-row-3, td.td-row-4, td.td-row-5),
+    :is(td.td-row-7, td.td-row-8, td.td-row-9, td.td-row-10):is(td.td-col-3, td.td-col-4, td.td-col-9, td.td-col-10) {
+        background-color: lightgray;
+    }
+
+    /* 售罄 */
+    td.td-row-4,
+    td.td-row-9 {
+        font-weight: bold;
+        color: red;
+    }
+
+    /* 原价 */
+    td.td-row-5:is(td.td-col-1, td.td-col-3, td.td-col-5, td.td-col-7, td.td-col-9) {
+        position: relative;
+    }
+
+    td.td-row-5:is(td.td-col-1, td.td-col-3, td.td-col-5, td.td-col-7, td.td-col-9)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        height: 0.02rem;
+        background-color: currentColor;
+        transform: translateY(-50%);
+    }
+
+    /* 现价 */
+    td.td-row-5:is(td.td-col-2, td.td-col-4, td.td-col-6, td.td-col-8, td.td-col-10) {
+        font-weight: bold;
+    }
+}

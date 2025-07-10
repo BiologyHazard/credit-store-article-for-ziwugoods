@@ -38,7 +38,7 @@ html {
 body {
     color: var(--text);
     background-color: var(--bg);
-    width: min(100% - 2em, calc(182mm - 2 * 15mm));
+    width: min(100% - 2em, calc(176mm - 2 * 18mm));
     margin: auto;
 }
 
@@ -90,6 +90,7 @@ p {
 u {
     text-decoration: underline;
     text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.05em;
 }
 
 a {
@@ -101,11 +102,13 @@ a:hover {
     color: #3d9ceb;
     text-decoration: underline;
     text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.05em;
 }
 
 a.url,
 a.url span {
     font-family: var(--mono-font);
+    font-weight: 300;
     font-size-adjust: 0.46;
     letter-spacing: -0.02em;
 
@@ -146,7 +149,6 @@ figcaption {
 
 pre {
     font-size: 0.7em;
-    letter-spacing: -0.02em;
     display: block;
     padding: 0.8em;
     background-color: var(--code-bg);
@@ -157,6 +159,8 @@ pre {
 
 code {
     font-family: var(--mono-font);
+    font-weight: 300;
+    letter-spacing: -0.02em;
     color: var(--code);
     white-space: pre-wrap;
     overflow-x: auto;
@@ -187,27 +191,6 @@ ul>li::marker,
 ol>li::marker {
     font-family: var(--mono-font);
     color: #1456f0;
-}
-
-table {
-    border-collapse: collapse;
-    border: 0.1rem solid var(--text);
-    margin-inline: auto;
-    margin-block: calc(2 * var(--paragraph-margin));
-}
-
-table thead {
-    font-weight: bold;
-    text-align: center;
-    background-color: var(--code-bg);
-    border: 0.1rem solid var(--text);
-}
-
-table :is(td, th) {
-    font-size: 0.7em;
-    padding-inline: 0.5em;
-    padding-block: 0.3em;
-    border: 0.05rem solid var(--border);
 }
 
 .katex {
@@ -314,4 +297,9 @@ td>:last-child {
         padding-block-start: 0.45rem;
         margin-block-start: calc(1em - 0.45rem);
     }
+}
+
+#doxcnBSrDVzqCqX4Edp9KnIhZIb .equation:nth-child(1),
+#doxcnrS61D3M4lsfETDG6OGabCd .equation:nth-child(1) {
+    color: var(--text-color-1)
 }
