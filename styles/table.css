@@ -1,123 +1,471 @@
 @import "colors.css";
 
+.table-container {
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 0.45rem;
+    border: 0.06rem solid var(--border);
+    box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
+    overflow: hidden;
+}
+
 table {
-    margin-inline: auto;
-    margin-block: calc(2 * var(--paragraph-margin));
-}
-
-/* table {
-    font-size: 0.7em;
-    border-collapse: collapse;
-    border: 0.1rem solid var(--text);
-    margin-inline: auto;
-    margin-block: calc(2 * var(--paragraph-margin));
-}
-
-table thead {
-    font-weight: bold;
-    text-align: center;
-    background-color: var(--code-bg);
-    border: 0.1rem solid var(--text);
-}
-
-table :is(td, th) {
-    padding-inline: 0.5em;
-    padding-block: 0.3em;
-    border: 0.05rem solid var(--border);
-} */
-
-table[spreadsheet-token_sheet-id="MhkrsfINvhyMEEtZPDGcgrOXnPg_I4ejXT"] {
-    table-layout: fixed;
+    break-inside: avoid;
     width: 100%;
-
-    border: none;
+    margin-block: 0;
     border-collapse: collapse;
-    text-align: center;
 
-    caption {
-        color: var(--text-light);
-        margin-block-start: 0.5em;
-        caption-side: bottom;
-    }
+    /* 文字大小 */
+    font-size: 0.9em;
 
+    /* 行高 */
     tr {
         height: 1em;
         padding-block: 0;
-        border: none;
     }
 
+    /* 边距 */
     td {
-        font-size: 0.52em;
-        padding: 0;
+        padding-inline: 0.3em;
+        padding-block: 0;
+    }
+
+    /* 框线 */
+
+    tr>td {
+        border: 0.05rem solid var(--border);
+    }
+
+    tr:first-child>td {
+        border-top: none;
+    }
+
+    tr:last-child>td {
+        border-bottom: none;
+    }
+
+    tr>td:first-child {
+        border-left: none;
+    }
+
+    tr>td:last-child {
+        border-right: none;
+    }
+}
+
+#GARMdgZEJoJq3bxfIsycx8eZnzb {
+    border: 0.08rem solid black;
+
+    td {
+        padding-inline: 0.5em;
+        padding-block: 0.1em;
+    }
+
+    tr:first-child td {
+        text-align: center;
+        background-color: var(--table-color-lightgray);
+    }
+
+    tr:first-child td {
+        border-bottom: 0.08rem solid black;
+    }
+
+    tr:last-child td {
+        border-top: 0.08rem solid black;
+    }
+
+    tr>td:first-child {
+        border-right: 0.08rem solid black;
+    }
+
+    tr:last-child td:first-child {
+        text-align: center;
+    }
+}
+
+#Srm8dnHQyoF69qxtdYDcn6Rzn0d,
+#PDu4do2B1oltzLxBGt2cbTZsn7g {
+    width: 100%;
+
+    td {
+        text-align: center;
     }
 
     /* 设置列宽 */
-    td.td-col-1,
-    td.td-col-3,
-    td.td-col-5,
-    td.td-col-7,
-    td.td-col-9 {
-        width: 11%;
+    td.td-col-1 {
+        width: 5%;
     }
 
-    td.td-col-2,
+    td.td-col-2 {
+        width: 8.5%;
+    }
+
+    td.td-col-3 {
+        width: 4%;
+    }
+
     td.td-col-4,
-    td.td-col-6,
-    td.td-col-8,
-    td.td-col-10 {
-        width: 9%;
+    td.td-col-5 {
+        width: 7%;
     }
 
-    /* 设置框线 */
-    td.td-row-2,
-    td.td-row-3,
-    td.td-row-4,
-    td.td-row-5,
-    td.td-row-7,
-    td.td-row-8,
-    td.td-row-9,
-    td.td-row-10 {
-        border: 0.02rem solid var(--border);
+    td.td-col-6 {
+        width: 6%;
     }
 
     /* 文字格式 */
-    /* 栏位编号加粗 */
-    td.td-row-2,
-    td.td-row-7 {
+    /* 标题行 */
+    td.td-row-1 {
         font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
     }
 
     /* 其他栏位文字颜色 */
-    :is(td.td-row-2, td.td-row-3, td.td-row-4, td.td-row-5),
-    :is(td.td-row-7, td.td-row-8, td.td-row-9, td.td-row-10):is(td.td-col-3, td.td-col-4, td.td-col-9, td.td-col-10) {
-        background-color: lightgray;
+    td.td-row-2,
+    td.td-row-3,
+    td.td-row-4,
+    td.td-row-6,
+    td.td-row-8,
+    td.td-row-9,
+    td.td-row-11 {
+        background-color: var(--table-color-lightgray);
     }
 
     /* 售罄 */
-    td.td-row-4,
-    td.td-row-9 {
+    td.td-row-2-col-6,
+    td.td-row-3-col-6,
+    td.td-row-4-col-6,
+    td.td-row-6-col-6,
+    td.td-row-8-col-6,
+    td.td-row-9-col-6,
+    td.td-row-11-col-6 {
+        background-color: var(--table-color-lightgray);
         font-weight: bold;
         color: red;
     }
 
     /* 原价 */
-    td.td-row-5:is(td.td-col-1, td.td-col-3, td.td-col-5, td.td-col-7, td.td-col-9) {
+    td.td-row-2-col-4,
+    td.td-row-3-col-4,
+    td.td-row-4-col-4,
+    td.td-row-5-col-4,
+    td.td-row-6-col-4,
+    td.td-row-7-col-4,
+    td.td-row-8-col-4 {
         position: relative;
     }
 
-    td.td-row-5:is(td.td-col-1, td.td-col-3, td.td-col-5, td.td-col-7, td.td-col-9)::after {
+    td.td-row-2-col-4::after,
+    td.td-row-3-col-4::after,
+    td.td-row-4-col-4::after,
+    td.td-row-5-col-4::after,
+    td.td-row-6-col-4::after,
+    td.td-row-7-col-4::after,
+    td.td-row-8-col-4::after {
         content: '';
         position: absolute;
         top: 50%;
-        left: 10%;
-        width: 80%;
-        height: 0.02rem;
+        left: 5%;
+        width: 90%;
+        height: 0.05rem;
         background-color: currentColor;
         transform: translateY(-50%);
     }
 
     /* 现价 */
-    td.td-row-5:is(td.td-col-2, td.td-col-4, td.td-col-6, td.td-col-8, td.td-col-10) {
+    td.td-row-2-col-5,
+    td.td-row-3-col-5,
+    td.td-row-4-col-5,
+    td.td-row-5-col-5,
+    td.td-row-6-col-5,
+    td.td-row-7-col-5,
+    td.td-row-8-col-5,
+    td.td-row-9-col-4,
+    td.td-row-10-col-4,
+    td.td-row-11-col-4 {
         font-weight: bold;
+    }
+}
+
+#XChXdo3h8o6ELoxtrzLc12JSnWg {
+    table-layout: fixed;
+
+    /* 设置列宽 */
+    td.td-col-1 {
+        width: 10em;
+    }
+
+    td.td-col-2 {
+        width: 8em;
+    }
+
+    td.td-col-3,
+    td.td-col-4 {
+        width: 7em;
+    }
+
+    /* 文字格式 */
+    /* 数字右对齐 */
+    td.td-col-3,
+    td.td-col-4 {
+        text-align: right;
+    }
+
+    /* 标题行 */
+    td.td-row-1 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+}
+
+#YLRFdLbgToaF45x3GgrcYbCvnvb {
+    table-layout: fixed;
+
+    /* 设置列宽 */
+    td {
+        width: 9em;
+    }
+
+    /* 文字格式 */
+    /* 数字右对齐 */
+    td.td-col-3,
+    td.td-col-4 {
+        text-align: right;
+    }
+
+    /* 标题行 */
+    td.td-row-1,
+    td.td-row-2 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+
+    /* 低阶商品 */
+    td.td-col-1:not(.td-row-1) {
+        background-color: var(--table-color-lightgray);
+    }
+
+    /* 高阶商品 */
+    td.td-col-2:not(.td-row-1) {
+        background-color: var(--table-color-lightblue);
+    }
+
+    /* 不分等阶商品 */
+    td.td-row-1-col-3,
+    td.td-row-3-col-3,
+    td.td-row-4-col-3,
+    td.td-row-5-col-3 {
+        background-color: var(--table-color-lightgreen);
+    }
+}
+
+#KcxVdnZuko3NXyx5jgycfQTDnyd {
+    .table-container {
+        width: 100%;
+    }
+
+    td.td-col-2,
+    td.td-col-3 {
+        display: none;
+    }
+
+    /* 文字格式 */
+    /* 数字右对齐 */
+    td.td-col-3,
+    td.td-col-4,
+    td.td-col-5,
+    td.td-col-6,
+    td.td-col-7 {
+        text-align: right;
+    }
+
+    /* 标题行 */
+    td.td-row-1 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+}
+
+#WTzmdsemjosyrGxUc9ac1LI7nee,
+#G60YdQmIaofZBVxeFcJc7Ck2n33 {
+    width: 100%;
+
+    td {
+        text-align: center;
+    }
+
+    /* 设置列宽 */
+    td.td-col-1 {
+        width: 5%;
+    }
+
+    td.td-col-2 {
+        width: 8.5%;
+    }
+
+    td.td-col-3 {
+        width: 4%;
+    }
+
+    td.td-col-4,
+    td.td-col-5 {
+        width: 7%;
+    }
+
+    td.td-col-6 {
+        width: 6%;
+    }
+
+    /* 文字格式 */
+    /* 标题行 */
+    td.td-row-1 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+
+    /* 原价 */
+    td.td-row-2-col-4,
+    td.td-row-3-col-4,
+    td.td-row-4-col-4,
+    td.td-row-5-col-4,
+    td.td-row-6-col-4,
+    td.td-row-7-col-4,
+    td.td-row-8-col-4 {
+        position: relative;
+    }
+
+    td.td-row-2-col-4::after,
+    td.td-row-3-col-4::after,
+    td.td-row-4-col-4::after,
+    td.td-row-5-col-4::after,
+    td.td-row-6-col-4::after,
+    td.td-row-7-col-4::after,
+    td.td-row-8-col-4::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 90%;
+        height: 0.05rem;
+        background-color: currentColor;
+        transform: translateY(-50%);
+    }
+
+    /* 现价 */
+    td.td-row-2-col-5,
+    td.td-row-3-col-5,
+    td.td-row-4-col-5,
+    td.td-row-5-col-5,
+    td.td-row-6-col-5,
+    td.td-row-7-col-5,
+    td.td-row-8-col-5,
+    td.td-row-9-col-4,
+    td.td-row-10-col-4,
+    td.td-row-11-col-4 {
+        font-weight: bold;
+    }
+}
+
+#RUAhd7rYio1hezxCrcpc4Euin0e,
+#EQFhd7mosoJQdexBiqcctSB7nfh {
+    .table-container {
+        width: 100%;
+    }
+
+    table-layout: fixed;
+
+    td.td-col-5 {
+        display: none;
+    }
+
+    /* 设置列宽 */
+    td.td-col-1,
+    td.td-col-4 {
+        width: 20%;
+    }
+
+    td.td-col-2,
+    td.td-col-3,
+    td.td-col-6,
+    td.td-col-7 {
+        width: 15%;
+    }
+
+    td.td-col-2,
+    td.td-col-3,
+    td.td-col-6,
+    td.td-col-7 {
+        text-align: right;
+    }
+
+    /* 文字格式 */
+    /* 标题行 */
+    td.td-row-1 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+}
+
+#UoNVdN7D6oDOupxmsghcW4sbnEb {
+    .table-container {
+        width: 88%;
+    }
+
+    /* 设置列宽 */
+    /* td.td-col-1 {
+        width: 25%;
+    }
+
+    :is(td.td-col-2, td.td-col-3, td.td-col-4, td.td-col-5, td.td-col-6):not(.td-row-1) {
+        width: 15%;
+    } */
+
+
+    /* 文字格式 */
+    td.td-col-2,
+    td.td-col-3,
+    td.td-col-4,
+    td.td-col-5,
+    td.td-col-6 {
+        text-align: right;
+    }
+
+    /* 标题行 */
+    td.td-row-1,
+    td.td-row-2 {
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--table-color-yellow);
+    }
+
+    .tick,
+    .cross,
+    .warning {
+        display: inline-block;
+        width: 1em;
+        margin-right: 0.8em;
+        text-align: left;
+    }
+
+    svg {
+        vertical-align: -0.15em;
+    }
+
+    .tick {
+        color: var(--text-color-4);
+    }
+
+    .cross {
+        color: var(--text-color-1);
+    }
+
+    .warning {
+        color: var(--text-color-3);
     }
 }

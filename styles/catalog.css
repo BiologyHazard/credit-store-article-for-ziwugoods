@@ -1,0 +1,101 @@
+.catalog {
+    break-after: page;
+
+    h1 {
+        text-align: center;
+        border: none;
+        margin-block: 2em;
+    }
+
+    ol {
+        counter-reset: c1;
+        padding-inline-start: 1.2em;
+    }
+
+    >ol>li>ol {
+        counter-reset: c2;
+        padding-inline-start: 2em;
+        margin-block: 0.2em;
+    }
+
+    >ol>li>ol>li>ol {
+        counter-reset: c3;
+        padding-inline-start: 2em;
+        margin-block: 0.2em;
+    }
+
+    >ol>li {
+        counter-increment: c1;
+        font-weight: bold;
+        padding-inline-start: 1.2em;
+    }
+
+    >ol>li>ol>li {
+        counter-increment: c2;
+        font-weight: normal;
+        padding-inline-start: 1em;
+        margin-block: 0.2em;
+    }
+
+    >ol>li>ol>li>ol>li {
+        counter-increment: c3;
+        font-weight: normal;
+        padding-inline-start: 1em;
+        margin-block: 0.2em;
+    }
+
+    li::marker {
+        font-family: "CMU Serif";
+        font-size-adjust: 0.46;
+        color: var(--text);
+    }
+
+    >ol>li::marker {
+        content: counter(c1);
+    }
+
+    >ol>li>ol>li::marker {
+        content: counter(c1) "." counter(c2);
+    }
+
+    >ol>li>ol>li>ol>li::marker {
+        content: counter(c1) "." counter(c2) "." counter(c3);
+    }
+
+    /* Title row styles */
+    .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* .title-text {
+        overflow: hidden;
+        display: flex;
+        flex-grow: 1;
+    } */
+
+    /* .title-text::after {
+        content: "· · · · · · · · · · · · · · · ·";
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        margin: 0 0.2em;
+        width: 100%;
+        color: #999;
+        text-align: right;
+    } */
+
+    .page-number {
+        font-family: "CMU Serif";
+        font-size-adjust: 0.46;
+        /* min-width: 30px; */
+        text-align: right;
+        /* flex-shrink: 0; */
+        margin-left: auto;
+    }
+}

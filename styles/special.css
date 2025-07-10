@@ -1,0 +1,23 @@
+/* 公式改颜色 */
+#doxcnBSrDVzqCqX4Edp9KnIhZIb .equation:nth-child(1),
+#doxcnrS61D3M4lsfETDG6OGabCd .equation:nth-child(1) {
+    color: var(--text-color-1)
+}
+
+/* θ 改字体 */
+#AGQxdN0dqobqY9xLZbuc2m0snpe :is(.equation:nth-child(3), .equation:nth-child(5)) .base>.mord.mathnormal {
+    font-family: KaTeX_Math
+}
+
+/* 英文语境改字体 */
+:is(#doxcn4pQRP2MWnSAgnzeABUijxS, #HHnodm25MoOzHrxdY5ScOUrQnNf, #SwNndvaUgoSC6AxzRBkcELRSneg, #doxcnHFr2A6NcAiny5T0lgZ1RRb, #doxcnLNCxc7bn34FSfyXSYHGeDY, #doxcnXdItZpH6xpGdrde5BRV07f)>:lang(zh) {
+    font-family: "CMU Serif";
+    font-size-adjust: 0.46;
+    line-height: calc(1.6 / 1.1);
+    vertical-align: 0.02em;
+}
+
+/* 图片宽度 */
+#XEuWdyfcVoMjoDxmjNRcngiynie img {
+    width: 70%;
+}
