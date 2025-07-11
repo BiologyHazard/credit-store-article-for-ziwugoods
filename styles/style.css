@@ -111,8 +111,7 @@ a.url,
 a.url span {
     font-family: var(--mono-font);
     font-weight: 300;
-    font-size-adjust: 0.46;
-    letter-spacing: -0.02em;
+    font-size-adjust: 0.5;
 
 }
 
@@ -137,7 +136,7 @@ figure {
 
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 0.45rem;
     box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
@@ -154,20 +153,23 @@ figcaption {
     margin-block-start: 0.5em;
 }
 
-pre {
-    font-size: 0.7em;
+pre,
+.code-container {
     display: block;
+    font-size-adjust: 0.5;
+    font-weight: 300;
+    line-height: 1.5;
     padding: 0.8em;
     background-color: var(--code-bg);
     border: 0.05rem solid var(--border);
-    border-radius: 0.28rem;
-    margin-block: 1.2rem;
+    border-radius: 0.45rem;
+    margin-block: calc(2 * var(--paragraph-margin));
+    break-inside: avoid;
 }
 
 code {
     font-family: var(--mono-font);
     font-weight: 300;
-    letter-spacing: -0.02em;
     color: var(--code);
     white-space: pre-wrap;
     overflow-x: auto;
@@ -192,6 +194,10 @@ li {
 
 ul>li {
     padding-inline-start: 0.5em;
+}
+
+:is(dir, menu, ol, ul) ul {
+    list-style-type: disc;
 }
 
 ul>li::marker,
@@ -276,14 +282,17 @@ td>:last-child {
 @media print {
     @page {
         /* margin: 15mm 0; */
-        margin: 30mm 0;
+        /* margin: calc(2 * 15mm) 0; */
+        margin: calc(4 * 15mm) 0;
         /* size: 176mm 250mm; */
-        size: 352mm 500mm;
+        /* size: calc(2 * 176mm) calc(2 * 250mm); */
+        size: calc(4 * 176mm) calc(4 * 250mm);
 
         @bottom-center {
             /* content: counter(page) " / " counter(pages); */
             content: counter(page);
             font-family: "CMU Serif";
+            font-size: 1em;
             font-size-adjust: 0.46;
             color: var(--text-light);
             vertical-align: 3em;
@@ -291,12 +300,15 @@ td>:last-child {
     }
 
     html {
-        font-size: 28px;
+        /* font-size: 14px; */
+        /* font-size: calc(2 * 14px); */
+        font-size: calc(4 * 14px);
     }
 
     body {
         /* width: calc(100% - 2 * 18mm); */
-        width: calc(100% - 4 * 18mm);
+        /* width: calc(100% - 4 * 18mm); */
+        width: calc(100% - 8 * 18mm);
     }
 
     h1 {

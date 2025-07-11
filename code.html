@@ -1,0 +1,580 @@
+<style>
+  .line {
+    font-family: "JetBrains Mono";
+    color: rgb(59, 59, 59);
+  }
+
+  .text-color-magenta {
+    color: rgb(175, 0, 219);
+  }
+
+  .text-color-black {
+    color: rgb(0, 0, 0);
+  }
+
+  .text-color-gray {
+    color: rgb(59, 59, 59);
+  }
+
+  .text-color-lightblue {
+    color: rgb(38, 127, 153);
+  }
+
+  .text-color-blue {
+    color: rgb(0, 0, 255)
+  }
+
+  .text-color-darkblue {
+    color: rgb(0, 16, 128);
+  }
+
+  .text-color-brown {
+    color: rgb(121, 94, 38);
+  }
+
+  .text-color-red {
+    color: rgb(163, 21, 21);
+  }
+
+  .text-color-green {
+    color: rgb(0, 128, 0);
+  }
+
+  .text-color-lightgreen {
+    color: rgb(9, 134, 88);
+  }
+</style>
+
+<div style="background-color: rgb(255, 255, 255);">
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">math</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">from</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">collections</span><span style="color: rgb(59, 59, 59);">.</span><span
+      style="color: rgb(38, 127, 153);">abc</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">Sequence</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">from</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">itertools</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">product</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">from</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">statistics</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">mean</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">from</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">credit_store_models</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">CreditStore</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">from</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">credit_store_stats</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">import</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">stats</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br><br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(0, 0, 255);">def</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">calculate_total_price</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">CreditStore</span><span style="color: rgb(59, 59, 59);">,</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">Sequence</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">bool</span><span style="color: rgb(59, 59, 59);">]) -&gt; </span><span
+      style="color: rgb(38, 127, 153);">int</span><span style="color: rgb(59, 59, 59);">:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">return</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(121, 94, 38);">sum</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(0, 16, 128);">item</span><span
+      style="color: rgb(59, 59, 59);">.current_price</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
+      style="color: rgb(175, 0, 219);">for</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">i</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(0, 16, 128);">item</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">in</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">enumerate</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">.</span><span
+      style="color: rgb(0, 16, 128);">items</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
+      style="color: rgb(175, 0, 219);">if</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(0, 16, 128);">i</span><span style="color: rgb(59, 59, 59);">])</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br><br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(0, 0, 255);">def</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">calculate_total_value</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">CreditStore</span><span style="color: rgb(59, 59, 59);">,</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">Sequence</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">bool</span><span style="color: rgb(59, 59, 59);">]) -&gt; </span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);">:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">return</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(121, 94, 38);">sum</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(0, 16, 128);">item</span><span
+      style="color: rgb(59, 59, 59);">.value </span><span style="color: rgb(175, 0, 219);">for</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">i</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(0, 16, 128);">item</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(175, 0, 219);">in</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(38, 127, 153);">enumerate</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(0, 16, 128);">shop</span><span
+      style="color: rgb(59, 59, 59);">.</span><span style="color: rgb(0, 16, 128);">items</span><span
+      style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
+      style="color: rgb(175, 0, 219);">if</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(0, 16, 128);">i</span><span style="color: rgb(59, 59, 59);">])</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br><br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(0, 0, 255);">def</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">solve_single_shop</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">CreditStore</span><span style="color: rgb(59, 59, 59);">,</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">current_credit</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">int</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(0, 16, 128);">K_n_C_x</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">list</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);">],</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">) -&gt; </span><span style="color: rgb(38, 127, 153);">tuple</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(38, 127, 153);">float</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(38, 127, 153);">tuple</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(38, 127, 153);">bool</span><span
+      style="color: rgb(59, 59, 59);">, ...]]:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(163, 21, 21);">"""</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(163, 21, 21);">
+    &nbsp; &nbsp; Choose one of 2 ** 10 purchase methods that does not</div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(163, 21, 21);">
+    &nbsp; &nbsp; overspend, such that the total value of the items purchased</div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(163, 21, 21);">
+    &nbsp; &nbsp; + K_n_C_x[carriable_credit] is maximized.</div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(163, 21, 21);">
+    &nbsp; &nbsp; """</div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">target_function_max</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">-</span><span style="color: rgb(38, 127, 153);">math</span><span
+      style="color: rgb(59, 59, 59);">.</span><span style="color: rgb(0, 16, 128);">inf</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">best_buy_index_vector</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">tuple</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">bool</span><span style="color: rgb(59, 59, 59);">, ...] </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">tuple</span><span style="color: rgb(59, 59, 59);">(</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 0, 255);">False</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">for</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">_</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">in</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">.</span><span
+      style="color: rgb(0, 16, 128);">items</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(0, 128, 0);"># enumerate 2 ** 10
+      purchase methods</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">for</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">buy_index_vector</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(121, 94, 38);">in</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(38, 127, 153);">product</span><span
+      style="color: rgb(59, 59, 59);">((</span><span style="color: rgb(0, 0, 255);">False</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(0, 0, 255);">True</span><span
+      style="color: rgb(59, 59, 59);">),</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: rgb(0, 16, 128);">repeat</span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(121, 94, 38);">len</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(0, 16, 128);">shop</span><span
+      style="color: rgb(59, 59, 59);">.</span><span style="color: rgb(0, 16, 128);">items</span><span
+      style="color: rgb(59, 59, 59);">)):</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">total_price</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">int</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">calculate_total_price</span><span style="color: rgb(59, 59, 59);">(</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">total_value</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">calculate_total_value</span><span style="color: rgb(59, 59, 59);">(</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(175, 0, 219);">if</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">total_price</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">&lt;=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">current_credit</span><span style="color: rgb(59, 59, 59);">: &nbsp;</span><span
+      style="color: rgb(0, 128, 0);"># does not overspend</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">credit_left</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">int</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">current_credit</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">-</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">total_price</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">carriable_credit</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">int</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">min</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">credit_left</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(9, 134, 88);">300</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">target_function</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);">&nbsp;(</span><span
+      style="color: rgb(0, 16, 128);">total_value</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: rgb(0, 0, 0);">+</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">K_n_C_x</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(0, 16, 128);">carriable_credit</span><span
+      style="color: rgb(59, 59, 59);">])</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(175, 0, 219);">if</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">target_function</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">&gt;</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">target_function_max</span><span style="color: rgb(59, 59, 59);">:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">target_function_max</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">target_function</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">best_buy_index_vector</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">buy_index_vector</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">return</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">target_function_max</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(0, 16, 128);">best_buy_index_vector</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br><br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(175, 0, 219);">if</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">__name__</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">==</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(163, 21, 21);">"__main__"</span><span style="color: rgb(59, 59, 59);">:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">daily_credit_income_C</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(9, 134, 88);">813</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">time_span_N</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(9, 134, 88);">11</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(0, 16, 128);">K_0_C_x</span><span
+      style="color: rgb(59, 59, 59);">: </span><span style="color: rgb(38, 127, 153);">list</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(38, 127, 153);">float</span><span
+      style="color: rgb(59, 59, 59);">] </span><span style="color: rgb(0, 0, 0);">=</span><span
+      style="color: rgb(59, 59, 59);">&nbsp;[</span><span style="color: rgb(9, 134, 88);">0</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(175, 0, 219);">for</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">_</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(175, 0, 219);">in</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(38, 127, 153);">range</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(9, 134, 88);">301</span><span
+      style="color: rgb(59, 59, 59);">)]</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(0, 16, 128);">K_x_C_x</span><span
+      style="color: rgb(59, 59, 59);">: </span><span style="color: rgb(38, 127, 153);">list</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(38, 127, 153);">list</span><span
+      style="color: rgb(59, 59, 59);">[</span><span style="color: rgb(38, 127, 153);">float</span><span
+      style="color: rgb(59, 59, 59);">]] </span><span style="color: rgb(0, 0, 0);">=</span><span
+      style="color: rgb(59, 59, 59);">&nbsp;[</span><span style="color: rgb(0, 16, 128);">K_0_C_x</span><span
+      style="color: rgb(59, 59, 59);">]</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">for</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">n</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(175, 0, 219);">in</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(38, 127, 153);">range</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(9, 134, 88);">1</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(0, 16, 128);">time_span_N</span><span
+      style="color: rgb(59, 59, 59);">):</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">K_n_minus_1_C_x</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">list</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);">] </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">K_x_C_x</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(0, 0, 0);">-</span><span style="color: rgb(9, 134, 88);">1</span><span
+      style="color: rgb(59, 59, 59);">]</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">K_n_C_x</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">list</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);">] </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);">&nbsp;[</span><span
+      style="color: rgb(9, 134, 88);">0</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">for</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">_</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">in</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">range</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(9, 134, 88);">301</span><span style="color: rgb(59, 59, 59);">)]</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(175, 0, 219);">for</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">carried_credit_c</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">in</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(38, 127, 153);">range</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(9, 134, 88);">301</span><span style="color: rgb(59, 59, 59);">):</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">samples_of_K_n_C_c</span><span style="color: rgb(59, 59, 59);">: </span><span
+      style="color: rgb(38, 127, 153);">list</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(38, 127, 153);">float</span><span style="color: rgb(59, 59, 59);">] </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);">&nbsp;[]</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(175, 0, 219);">for</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(175, 0, 219);">in</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">stats</span><span style="color: rgb(59, 59, 59);">:</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">target_function_max</span><span style="color: rgb(59, 59, 59);">, </span><span
+      style="color: rgb(0, 16, 128);">_</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">solve_single_shop</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">shop</span><span style="color: rgb(59, 59, 59);">,</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </span><span style="color: rgb(0, 16, 128);">carried_credit_c</span><span style="color: rgb(59, 59, 59);">
+    </span><span style="color: rgb(0, 0, 0);">+</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(0, 16, 128);">daily_credit_income_C</span><span style="color: rgb(59, 59, 59);">,</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </span><span style="color: rgb(0, 16, 128);">K_n_minus_1_C_x</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">samples_of_K_n_C_c</span><span style="color: rgb(59, 59, 59);">.</span><span
+      style="color: rgb(121, 94, 38);">append</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">target_function_max</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">K_n_C_x</span><span style="color: rgb(59, 59, 59);">[</span><span
+      style="color: rgb(0, 16, 128);">carried_credit_c</span><span style="color: rgb(59, 59, 59);">] </span><span
+      style="color: rgb(0, 0, 0);">=</span><span style="color: rgb(59, 59, 59);"> </span><span
+      style="color: rgb(121, 94, 38);">mean</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">samples_of_K_n_C_c</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 128, 0);"># use mean as an estimate of expectation</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(0, 16, 128);">K_x_C_x</span><span style="color: rgb(59, 59, 59);">.</span><span
+      style="color: rgb(121, 94, 38);">append</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 16, 128);">K_n_C_x</span><span style="color: rgb(59, 59, 59);">)</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px; color: rgb(59, 59, 59);">
+    <br>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; </span><span style="color: rgb(175, 0, 219);">for</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(0, 16, 128);">n</span><span
+      style="color: rgb(59, 59, 59);">, </span><span style="color: rgb(0, 16, 128);">K_n_C_x</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(175, 0, 219);">in</span><span
+      style="color: rgb(59, 59, 59);"> </span><span style="color: rgb(38, 127, 153);">enumerate</span><span
+      style="color: rgb(59, 59, 59);">(</span><span style="color: rgb(0, 16, 128);">K_x_C_x</span><span
+      style="color: rgb(59, 59, 59);">):</span>
+  </div>
+  <div
+    style="line-height: 22px; font-family: &quot;JetBrains Mono&quot;, 思源黑体, Consolas, Consolas, &quot;Courier New&quot;, monospace; font-size: 16px;">
+    <span style="color: rgb(59, 59, 59);">&nbsp; &nbsp; &nbsp; &nbsp; </span><span
+      style="color: rgb(121, 94, 38);">print</span><span style="color: rgb(59, 59, 59);">(</span><span
+      style="color: rgb(0, 0, 255);">f</span><span style="color: rgb(163, 21, 21);">"K_</span><span
+      style="color: rgb(0, 0, 255);">{</span><span style="color: rgb(0, 16, 128);">n</span><span
+      style="color: rgb(0, 0, 255);">}</span><span style="color: rgb(163, 21, 21);">_</span><span
+      style="color: rgb(0, 0, 255);">{</span><span style="color: rgb(0, 16, 128);">daily_credit_income_C</span><span
+      style="color: rgb(0, 0, 255);">}</span><span style="color: rgb(163, 21, 21);">_x: </span><span
+      style="color: rgb(0, 0, 255);">{</span><span style="color: rgb(0, 16, 128);">K_n_C_x</span><span
+      style="color: rgb(0, 0, 255);">}</span><span style="color: rgb(163, 21, 21);">"</span><span
+      style="color: rgb(59, 59, 59);">)</span>
+  </div>
+</div>

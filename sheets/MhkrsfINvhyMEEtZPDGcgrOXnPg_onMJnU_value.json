@@ -1,19 +1,19 @@
 {
-    "revision": 884,
+    "revision": 892,
     "spreadsheetToken": "MhkrsfINvhyMEEtZPDGcgrOXnPg",
     "valueRange": {
         "majorDimension": "ROWS",
         "range": "onMJnU!A1:G26",
-        "revision": 884,
+        "revision": 892,
         "values": [
             [
                 "商品名称",
-                "平均每日能购买的商品数量",
-                "平均每 365 天能购买的商品数量",
+                "平均每日能够购买的商品数量",
+                "平均每 365 天能够购买的商品数量",
                 "物品名称",
                 "数量",
-                "平均每日能购买的物品数量",
-                "平均每 365 天能购买的物品数量"
+                "平均每日能够购买的物品数量",
+                "平均每 365 天能够购买的物品数量"
             ],
             [
                 "龙门币×1800",

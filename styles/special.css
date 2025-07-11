@@ -19,5 +19,16 @@
 
 /* 图片宽度 */
 #XEuWdyfcVoMjoDxmjNRcngiynie img {
-    width: 70%;
+    width: 65%;
+}
+
+/* <main>下面的前10个子tag */
+main> :nth-child(-n+10) {
+    display: none;
+}
+
+/* 两个表格避免分页 */
+#RUAhd7rYio1hezxCrcpc4Euin0e,
+#EQFhd7mosoJQdexBiqcctSB7nfh {
+    break-before: avoid;
 }
