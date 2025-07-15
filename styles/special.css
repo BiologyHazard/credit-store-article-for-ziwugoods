@@ -1,8 +1,9 @@
 /* 公式改颜色 */
-#doxcnBSrDVzqCqX4Edp9KnIhZIb .equation:nth-child(1),
-#doxcnrS61D3M4lsfETDG6OGabCd .equation:nth-child(1) {
+/* #doxcnBSrDVzqCqX4Edp9KnIhZIb .equation:nth-child(1),
+#doxcnrS61D3M4lsfETDG6OGabCd .equation:nth-child(1),
+#doxcnLgqmLjgIzFscqC9qZHOpKb .equation:nth-child(10) {
     color: var(--text-color-1)
-}
+} */
 
 /* θ 改字体 */
 #AGQxdN0dqobqY9xLZbuc2m0snpe :is(.equation:nth-child(3), .equation:nth-child(5)) .base>.mord.mathnormal {
@@ -27,8 +28,34 @@ main> :nth-child(-n+10) {
     display: none;
 }
 
-/* 两个表格避免分页 */
+/* 避免分页 */
 #RUAhd7rYio1hezxCrcpc4Euin0e,
-#EQFhd7mosoJQdexBiqcctSB7nfh {
+#EQFhd7mosoJQdexBiqcctSB7nfh,
+#J7ondx1ktoIDPLxpEwMc7Tc4nmd,
+#G9Sxdjop5omW3Bx7V6dc06ysnnb,
+#BjCLdieyToK0MGxMOqbcLciyn4d,
+#OV15dHJpkoUcmdxSKnwcTbezn2f,
+#WaOqdvODAorZAixR1xgciyJdnEd,
+#L09fdMxhuoHaCcxP0MRckmQ7nrb,
+#UIYhd93lOoZ9TdxBEHQc7CBgn3b,
+#WtQ4dgyZQo9RrXxD2Nnci5NBnHc,
+#V72ZdnmlOoMwFPxYLwBcepFFnnc,
+#Ant7d4psOoZmpTx0UrDcCnQrneh,
+#Eg8Jd5vkkowlA4xJQ2icDoklnRf {
     break-before: avoid;
+}
+
+/* 避免换行 */
+#doxcn5X2MdTY18iaxPl0TnfHG9e,
+#doxcnyOql1QjC1XJj5Nn8rPvhzf {
+    width: 98%;
+}
+
+#doxcnrrrFW38EAoqsck5OaEWDge {
+    width: 101%;
+}
+
+/* 强制分页 */
+.catalog ol>li:nth-child(6) {
+    break-before: page;
 }

@@ -4,8 +4,8 @@
     width: fit-content;
     margin-inline: auto;
     border-radius: 0.45rem;
-    border: 0.06rem solid var(--border);
-    box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
+    border: 0.05rem solid var(--border);
+    /* box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%); */
     overflow: hidden;
 }
 

@@ -4,7 +4,7 @@
     h1 {
         text-align: center;
         border: none;
-        margin-block: 2em;
+        margin-block: 1em;
     }
 
     ol {
@@ -62,40 +62,26 @@
         content: counter(c1) "." counter(c2) "." counter(c3);
     }
 
-    /* Title row styles */
     .title-row {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-grow: 1;
-        width: 100%;
-        overflow: hidden;
         white-space: nowrap;
     }
-
-    /* .title-text {
-        overflow: hidden;
-        display: flex;
-        flex-grow: 1;
-    } */
-
-    /* .title-text::after {
-        content: "· · · · · · · · · · · · · · · ·";
-        overflow: hidden;
-        display: inline-block;
-        vertical-align: bottom;
-        margin: 0 0.2em;
-        width: 100%;
-        color: #999;
-        text-align: right;
-    } */
 
     .page-number {
         font-family: "CMU Serif";
         font-size-adjust: 0.46;
-        /* min-width: 30px; */
         text-align: right;
-        /* flex-shrink: 0; */
+        width: 2em;
+        flex-shrink: 0;
         margin-left: auto;
+    }
+
+    .dots {
+        font-weight: normal;
+        color: var(--text-light);
+        direction: rtl;
+        vertical-align: 1em;
+        overflow: hidden;
+        margin-left: 1em;
     }
 }

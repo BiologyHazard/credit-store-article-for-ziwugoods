@@ -1,0 +1,44 @@
+.line {
+    font-family: "JetBrains Mono";
+    color: rgb(59, 59, 59);
+}
+
+.text-color-magenta {
+    color: rgb(175, 0, 219);
+}
+
+.text-color-black {
+    color: rgb(0, 0, 0);
+}
+
+.text-color-gray {
+    color: rgb(59, 59, 59);
+}
+
+.text-color-lightblue {
+    color: rgb(38, 127, 153);
+}
+
+.text-color-blue {
+    color: rgb(0, 0, 255)
+}
+
+.text-color-darkblue {
+    color: rgb(0, 16, 128);
+}
+
+.text-color-brown {
+    color: rgb(121, 94, 38);
+}
+
+.text-color-red {
+    color: rgb(163, 21, 21);
+}
+
+.text-color-green {
+    color: rgb(0, 128, 0);
+}
+
+.text-color-lightgreen {
+    color: rgb(9, 134, 88);
+}
