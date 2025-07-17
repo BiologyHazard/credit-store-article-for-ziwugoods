@@ -15,11 +15,16 @@
     display: flex;
 }
 
-/* 减少间距 */
-#XPWYdH766otOkUxPQrSctkm2nNc {
-    margin-block: 0;
+/* 换行控制 */
+#AGQxdN0dqobqY9xLZbuc2m0snpe {
+    width: 100.5%;
 }
 
-[lang="zh"] :lang(en) {
-    background-color: aqua;
+#doxcnDTK4iz1JwlHs5OUgnWI4Ct {
+    width: 102%;
+}
+
+/* 脚注边距 */
+#Sm47dY93To2WpkxC2t6czbQtnyd>.footnote-ref {
+    margin-inline-start: 0.2em;
 }

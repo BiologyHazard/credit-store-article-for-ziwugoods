@@ -28,6 +28,7 @@
         counter-increment: c1;
         font-weight: bold;
         padding-inline-start: 1.2em;
+        margin-block: 1em;
     }
 
     >ol>li>ol>li {
@@ -73,7 +74,7 @@
         text-align: right;
         width: 2em;
         flex-shrink: 0;
-        margin-left: auto;
+        margin-inline-start: auto;
     }
 
     .dots {
@@ -82,6 +83,6 @@
         direction: rtl;
         vertical-align: 1em;
         overflow: hidden;
-        margin-left: 1em;
+        margin-inline-start: 1em;
     }
 }
