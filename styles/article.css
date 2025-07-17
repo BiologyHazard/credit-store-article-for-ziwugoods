@@ -1,23 +1,28 @@
 .katex {
     /* font-family: "CMU Serif", "KaTeX_Main", "Times New Roman", serif; */
-    font-size: 1em;
-    vertical-align: 0.05em;
-}
+    font-size: 1.08em;
+    vertical-align: 0.02em;
 
-.katex .mathnormal,
-.katex .mord,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner,
-.katex .mbin {
-    font-family: "CMU Serif", "KaTeX_Main", "Times New Roman", serif;
+    .mathnormal,
+    .mord,
+    .mopen,
+    .mclose,
+    .mpunct,
+    .minner,
+    .mbin,
+    .mrel {
+        font-family: "CMU Serif", "KaTeX_Main", "Times New Roman", serif;
+    }
 }
 
 .katex .amsrm,
 .katex .mathbb,
 .katex .textbb {
-    font-family: KaTeX_AMS
+    font-family: KaTeX_AMS;
+}
+
+.katex .mord.cjk_fallback {
+    font-size: calc(1em / 1.08);
 }
 
 .grid-container {
@@ -90,10 +95,31 @@ td>:last-child {
 .figure-qrcode img {
     width: 60%;
     height: auto;
-    box-shadow: none;
+    /* box-shadow: none; */
 }
 
 .figure-qrcode figcaption {
     margin-block-start: 0;
     font-size: 0.8em;
+}
+
+.footnote-ref {
+    color: #0077b6;
+    margin-right: 0.5em;
+}
+
+.footnote-container {
+    font-size: 0.8em;
+}
+
+.footnote-container::before {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 0.2em;
+    border-block-start: 0.05rem solid black;
+}
+
+.footnote-item {
+    display: flex;
 }

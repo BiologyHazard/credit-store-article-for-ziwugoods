@@ -10,52 +10,16 @@
     font-family: KaTeX_Math
 }
 
-/* 英文语境改字体 */
-:is(#doxcn4pQRP2MWnSAgnzeABUijxS, #HHnodm25MoOzHrxdY5ScOUrQnNf, #SwNndvaUgoSC6AxzRBkcELRSneg, #doxcnHFr2A6NcAiny5T0lgZ1RRb, #doxcnLNCxc7bn34FSfyXSYHGeDY, #doxcnXdItZpH6xpGdrde5BRV07f)>:lang(zh) {
-    font-family: "CMU Serif";
-    font-size-adjust: 0.46;
-    line-height: calc(1.6 / 1.1);
-    vertical-align: 0.02em;
+/* 标题悬挂 */
+#GjubdG4hloUr4axCXl2c8ahqnQh {
+    display: flex;
 }
 
-/* 图片宽度 */
-#XEuWdyfcVoMjoDxmjNRcngiynie img {
-    width: 65%;
+/* 减少间距 */
+#XPWYdH766otOkUxPQrSctkm2nNc {
+    margin-block: 0;
 }
 
-/* <main>下面的前10个子tag */
-main> :nth-child(-n+10) {
-    display: none;
-}
-
-/* 避免分页 */
-#RUAhd7rYio1hezxCrcpc4Euin0e,
-#EQFhd7mosoJQdexBiqcctSB7nfh,
-#J7ondx1ktoIDPLxpEwMc7Tc4nmd,
-#G9Sxdjop5omW3Bx7V6dc06ysnnb,
-#BjCLdieyToK0MGxMOqbcLciyn4d,
-#OV15dHJpkoUcmdxSKnwcTbezn2f,
-#WaOqdvODAorZAixR1xgciyJdnEd,
-#L09fdMxhuoHaCcxP0MRckmQ7nrb,
-#UIYhd93lOoZ9TdxBEHQc7CBgn3b,
-#WtQ4dgyZQo9RrXxD2Nnci5NBnHc,
-#V72ZdnmlOoMwFPxYLwBcepFFnnc,
-#Ant7d4psOoZmpTx0UrDcCnQrneh,
-#Eg8Jd5vkkowlA4xJQ2icDoklnRf {
-    break-before: avoid;
-}
-
-/* 避免换行 */
-#doxcn5X2MdTY18iaxPl0TnfHG9e,
-#doxcnyOql1QjC1XJj5Nn8rPvhzf {
-    width: 98%;
-}
-
-#doxcnrrrFW38EAoqsck5OaEWDge {
-    width: 101%;
-}
-
-/* 强制分页 */
-.catalog ol>li:nth-child(6) {
-    break-before: page;
+[lang="zh"] :lang(en) {
+    background-color: aqua;
 }

@@ -4,7 +4,7 @@
     h1 {
         text-align: center;
         border: none;
-        margin-block: 1em;
+        margin-block: 1.5em;
     }
 
     ol {
@@ -46,7 +46,7 @@
 
     li::marker {
         font-family: "CMU Serif";
-        font-size-adjust: 0.46;
+        font-size: 1.08em;
         color: var(--text);
     }
 
@@ -67,9 +67,9 @@
         white-space: nowrap;
     }
 
-    .page-number {
+    .catalog-page-number {
         font-family: "CMU Serif";
-        font-size-adjust: 0.46;
+        font-size: 1.08em;
         text-align: right;
         width: 2em;
         flex-shrink: 0;

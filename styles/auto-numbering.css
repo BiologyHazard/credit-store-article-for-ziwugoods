@@ -22,16 +22,9 @@ h5.auto-numbering {
     counter-reset: h6;
 }
 
-h1.auto-numbering::before,
-h2.auto-numbering::before,
-h3.auto-numbering::before,
-h4.auto-numbering::before,
-h5.auto-numbering::before,
-h6.auto-numbering::before {
-    color: #1456f0;
+:is(h1, h2, h3, h4, h5, h6).auto-numbering::before {
     font-family: "CMU Serif";
-    font-size: 1.2em;
-    vertical-align: -0.02em;
+    font-size: 1.12em;
     margin-right: 1em;
 }
 

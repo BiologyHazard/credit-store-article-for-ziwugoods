@@ -23,15 +23,15 @@ html {
     overflow-wrap: break-word;
 }
 
-:is(p, li, h1, h2, h3, h4, h5, h6, figcaption, td, th) :lang(en) {
+span:lang(en) {
     font-family: "CMU Serif";
-    font-size-adjust: 0.46;
-    line-height: calc(1.6 / 1.1);
+    font-size: 1.08em;
+    line-height: 1;
     vertical-align: 0.02em;
 }
 
 /* :is(p, li, h1, h2, h3, h4, h5, h6) :is(b, strong) :lang(en) {
-    font-size-adjust: 1.15;
+    font-size: 1.15em;
     vertical-align: 0.02em;
 } */
 
@@ -48,41 +48,45 @@ h3,
 h4,
 h5,
 h6 {
-    margin-block-start: calc(0.8em + 0.8rem);
-    margin-block-end: calc(0.2em + 0.8rem);
+    margin-block-start: calc(0.6em + 0.6rem);
+    margin-block-end: calc(0.3em + 0.3rem);
     break-after: avoid;
     break-inside: avoid;
 }
 
-h1,
-h2 {
-    padding-block-end: 0.5em;
-    border-block-end: 0.05rem solid var(--border);
+h1+h2,
+h2+h3,
+h3+h4,
+h4+h5,
+h5+h6 {
+    margin-block-start: 0;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2em;
+    padding-block-end: 0.3em;
+    border-block-end: 0.05rem solid var(--border);
     break-before: page;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 h3 {
-    font-size: 1.65em;
-}
-
-h4 {
     font-size: 1.4em;
 }
 
+h4 {
+    font-size: 1.3em;
+}
+
 h5 {
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 h6 {
-    font-size: 1.15em;
+    font-size: 1.1em;
 }
 
 p {
@@ -93,7 +97,7 @@ p {
 u {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    text-decoration-thickness: 0.05em;
+    text-decoration-thickness: 0.05rem;
 }
 
 a {
@@ -108,12 +112,10 @@ a:hover {
     text-decoration-thickness: 0.05em;
 }
 
-a.url,
-a.url span {
+.url {
     font-family: var(--mono-font);
     font-weight: 300;
-    font-size-adjust: 0.5;
-
+    font-size: 0.9em;
 }
 
 blockquote {
@@ -127,11 +129,12 @@ blockquote {
 hr {
     border: none;
     border-block-start: 0.05rem solid var(--border);
-    margin-block: calc(3 * var(--paragraph-margin));
+    margin-block: calc(2 * var(--paragraph-margin));
 }
 
 figure {
     margin-inline: 0;
+    margin-block: calc(2 * var(--paragraph-margin));
     break-inside: avoid;
 }
 
@@ -139,8 +142,8 @@ img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 0.45rem;
-    box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%);
+    /* border-radius: 0.45rem; */
+    /* box-shadow: 0 0 0.45rem 0.05rem rgb(0 0 0 / 25%); */
     margin: auto;
 }
 
@@ -151,13 +154,12 @@ img.board {
 figcaption {
     text-align: center;
     color: var(--text-light);
-    margin-block-start: 0.5em;
+    margin-block-start: 0.4em;
 }
 
 pre,
 .code-container {
     display: block;
-    font-size-adjust: 0.5;
     font-weight: 300;
     line-height: 1.5;
     padding: 0.8em;
@@ -204,7 +206,6 @@ ul>li {
 ul>li::marker,
 ol>li::marker {
     font-family: var(--mono-font);
-    color: #1456f0;
 }
 
 /* 打印样式 */
@@ -214,81 +215,8 @@ ol>li::marker {
     }
 
     @page {
-        margin: calc(var(--scale) * 15mm) 0;
+        margin: calc(var(--scale) * 13mm) 0;
         size: calc(var(--scale) * 176mm) calc(var(--scale) * 250mm);
-
-        /* @bottom-center {
-            content: counter(page);
-            font-family: "CMU Serif";
-            font-size: 1em;
-            font-size-adjust: 0.46;
-            color: var(--text-light);
-            vertical-align: 3em;
-        } */
-    }
-
-    @page :right {
-        @top-right {
-            content: counter(page);
-            font-family: "CMU Serif";
-            font-size: 1em;
-            font-size-adjust: 0.46;
-            color: var(--text-light);
-            margin-top: calc(var(--scale) * 15mm);
-            margin-right: calc(var(--scale) * 20mm);
-        }
-    }
-
-    @page :left {
-        @top-left {
-            content: counter(page);
-            font-family: "CMU Serif";
-            font-size: 1em;
-            font-size-adjust: 0.46;
-            color: var(--text-light);
-            margin-top: calc(var(--scale) * 15mm);
-            margin-left: calc(var(--scale) * 20mm);
-        }
-    }
-
-    /* * {
-        break-before: unset !important;
-        break-after: unset !important;
-        break-inside: unset !important;
-    } */
-
-    .page-break {
-        position: relative;
-        break-before: page !important;
-        /* box-sizing: border-box; */
-        padding-top: 30px;
-        background-color: #bcbcbc;
-    }
-
-    /* 单数页：右上角 */
-    .page-break:nth-child(odd)::before {
-        content: attr(data-header);
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 14px;
-        font-weight: bold;
-        color: black;
-        padding: 5px 10px;
-        /* background: white; */
-    }
-
-    /* 双数页：左下角 */
-    .page-break:nth-child(even)::after {
-        content: attr(data-header);
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 14px;
-        font-weight: bold;
-        color: black;
-        padding: 5px 10px;
-        /*background: white;*/
     }
 
     html {
@@ -302,9 +230,29 @@ ol>li::marker {
     h1 {
         margin-block-start: 0;
     }
+}
 
-    figure {
-        padding-block-start: 0.45rem;
-        margin-block-start: calc(1em - 0.45rem);
-    }
+* {
+    break-before: unset !important;
+    /* break-after: unset !important;
+    break-inside: unset !important; */
+}
+
+.page-header {
+    /* position: relative; */
+    display: flex;
+    /* display: none; */
+    justify-content: space-between;
+    break-before: page !important;
+    /* padding-top: 2em; */
+    /* background-color: #bcbcbc; */
+    margin-block-end: 1.5em;
+}
+
+.page-header+* {
+    margin-block-start: 0;
+}
+
+.page-number {
+    font-family: "CMU Serif";
 }
