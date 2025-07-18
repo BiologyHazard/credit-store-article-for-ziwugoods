@@ -30,11 +30,6 @@ span:lang(en) {
     vertical-align: 0.02em;
 }
 
-/* :is(p, li, h1, h2, h3, h4, h5, h6) :is(b, strong) :lang(en) {
-    font-size: 1.15em;
-    vertical-align: 0.02em;
-} */
-
 body {
     color: var(--text);
     background-color: var(--bg);
@@ -152,6 +147,7 @@ img.board {
 }
 
 figcaption {
+    font-size: 0.9em;
     text-align: center;
     color: var(--text-light);
     margin-block-start: 0.4em;
@@ -206,6 +202,7 @@ ul>li {
 ul>li::marker,
 ol>li::marker {
     font-family: var(--mono-font);
+    font-weight: 300;
 }
 
 /* 打印样式 */

@@ -471,14 +471,14 @@ table {
     }
 
     .tick {
-        color: var(--text-color-4);
+        color: #00a000;
     }
 
     .cross {
-        color: var(--text-color-1);
+        color: red;
     }
 
     .warning {
-        color: var(--text-color-3);
+        color: rgb(238, 154, 0);
     }
 }
