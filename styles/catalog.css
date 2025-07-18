@@ -44,13 +44,14 @@
     }
 
     li::marker {
-        font-family: "CMU Serif";
+        font-family: var(--en-serif-font);
         font-size: 1.08em;
         color: var(--text);
     }
 
     >ol>li::marker {
         content: counter(c1);
+        font-weight: bold;
     }
 
     >ol>li>ol>li::marker {
@@ -67,7 +68,7 @@
     }
 
     .catalog-page-number {
-        font-family: "CMU Serif";
+        font-family: var(--en-serif-font);
         font-size: 1.08em;
         text-align: right;
         width: 2em;

@@ -35,3 +35,8 @@
     margin-inline-start: 0.2em;
     margin-inline-end: 0.2em;
 }
+
+/* 列表 marker 加粗 */
+#朴素的购买策略-无序列表>li::marker {
+    font-weight: 600;
+}

@@ -23,7 +23,7 @@ h5.auto-numbering {
 }
 
 :is(h1, h2, h3, h4, h5, h6).auto-numbering::before {
-    font-family: "CMU Serif";
+    font-family: var(--en-serif-font);
     font-size: 1.12em;
     margin-right: 1em;
 }

@@ -1,8 +1,8 @@
 :root {
     --sans-font: "Noto Sans SC", sans-serif;
-    --serif-font: "Noto Serif SC", serif;
+    --en-serif-font: "CMU Serif", serif;
+    --CJK-serif-font: "Noto Serif SC", serif;
     --mono-font: "Jetbrains Mono", monospace;
-    --main-font: var(--serif-font);
     --text: black;
     --bg: white;
     --text-light: #6a6a6a;
@@ -17,14 +17,14 @@
 }
 
 html {
-    font-family: var(--main-font);
+    font-family: var(--CJK-serif-font);
     font-size: 14px;
     line-height: 1.6;
     overflow-wrap: break-word;
 }
 
 span:lang(en) {
-    font-family: "CMU Serif";
+    font-family: var(--en-serif-font);
     font-size: 1.08em;
     line-height: 1;
     vertical-align: 0.02em;
@@ -248,8 +248,4 @@ ol>li::marker {
 
 .page-header+* {
     margin-block-start: 0;
-}
-
-.page-number {
-    font-family: "CMU Serif";
 }
