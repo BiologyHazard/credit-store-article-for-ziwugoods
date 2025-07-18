@@ -104,9 +104,11 @@ td>:last-child {
 }
 
 .footnote-ref {
-    color: #0077b6;
-    margin-inline-end: 0.5em;
     font-weight: normal;
+}
+
+.footnote-mark {
+    margin-inline-end: 0.5em;
 }
 
 .footnote-container {

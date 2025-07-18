@@ -1,6 +1,4 @@
 .catalog {
-    break-after: page;
-
     h1 {
         text-align: center;
         border: none;
@@ -74,7 +72,7 @@
         text-align: right;
         width: 2em;
         flex-shrink: 0;
-        margin-inline-start: auto;
+        margin-left: auto;
     }
 
     .dots {
@@ -83,6 +81,6 @@
         direction: rtl;
         vertical-align: 1em;
         overflow: hidden;
-        margin-inline-start: 1em;
+        margin-left: 1em;
     }
 }

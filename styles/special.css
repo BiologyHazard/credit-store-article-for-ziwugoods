@@ -11,6 +11,7 @@
 }
 
 /* 标题悬挂 */
+#doxcnDhZHykVyCS6ZrCaLGS2zHb,
 #GjubdG4hloUr4axCXl2c8ahqnQh {
     display: flex;
 }
@@ -25,6 +26,12 @@
 }
 
 /* 脚注边距 */
-#Sm47dY93To2WpkxC2t6czbQtnyd>.footnote-ref {
+#Sm47dY93To2WpkxC2t6czbQtnyd>.footnote-ref,
+#ZiFJdx8gCoqRflxNNrlcaiO4n9e>.footnote-ref,
+#AIFSdDyQyoPipCx9iCKcySOxnwg>.footnote-ref,
+#doxcnfubSgVEcgikVgUQRyf7gIf .footnote-ref,
+#doxcnmTD6mAtIQPvqBym0NxFCyc>.footnote-ref,
+#doxcn4l08PJ81V3u7LNYvbNuLyI>.footnote-ref {
     margin-inline-start: 0.2em;
+    margin-inline-end: 0.2em;
 }
