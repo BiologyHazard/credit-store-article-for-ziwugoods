@@ -86,7 +86,7 @@ h6 {
 
 p {
     margin-block: var(--paragraph-margin);
-    break-inside: avoid;
+    /* break-inside: avoid; */
 }
 
 u {
@@ -96,7 +96,7 @@ u {
 }
 
 a {
-    color: #0077b6;
+    color: var(--text);
     text-decoration: none;
 }
 

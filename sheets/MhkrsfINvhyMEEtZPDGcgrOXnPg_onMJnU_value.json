@@ -1,10 +1,10 @@
 {
-    "revision": 905,
+    "revision": 927,
     "spreadsheetToken": "MhkrsfINvhyMEEtZPDGcgrOXnPg",
     "valueRange": {
         "majorDimension": "ROWS",
         "range": "onMJnU!A1:G26",
-        "revision": 905,
+        "revision": 927,
         "values": [
             [
                 "商品名称",
@@ -17,7 +17,7 @@
             ],
             [
                 "龙门币×1800",
-                "0.11875786",
+                "0.1188",
                 "43.3466",
                 "龙门币",
                 "1800",
